@@ -76,9 +76,9 @@ export const HowItWorksSection = () => {
                                     onMouseEnter={() => setCurrentTab(index)}
                                     className="cursor-pointer"
                                 >
-                                    <div className={`border-l-2 py-6 pl-6 pr-4 rounded-r-xl transition-colors duration-500 ease-in-out ${index === currentTab ? 'border-purple-600 bg-purple-50' : 'border-gray-200 bg-transparent'}`}>
+                                    <div className={`border-l-2 py-6 pl-6 pr-4 rounded-r-xl transition-colors duration-500 ease-in-out ${index === currentTab ? 'border-purple-600 bg-purple-50 dark:bg-purple-900/20' : 'border-gray-200 dark:border-gray-700 bg-transparent'}`}>
                                         <div className="flex items-center gap-3 mb-2">
-                                            <span className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-semibold transition-colors duration-500 ease-in-out ${index === currentTab ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-600'}`}>
+                                            <span className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-semibold transition-colors duration-500 ease-in-out ${index === currentTab ? 'bg-purple-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300'}`}>
                                                 {step.number}
                                             </span>
                                             <h3 className={`text-lg font-semibold transition-colors duration-500 ease-in-out ${index === currentTab ? 'text-primary' : 'text-tertiary'}`}>
