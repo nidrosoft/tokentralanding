@@ -116,9 +116,33 @@ const footerNavList = [
     },
 ];
 
+const AnnouncementBanner = () => {
+    return (
+        <div className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 py-2.5 px-4">
+            <div className="mx-auto max-w-container flex items-center justify-center gap-x-3 text-sm md:text-base">
+                <span className="inline-flex items-center rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold text-white">
+                    NEW
+                </span>
+                <p className="text-white font-medium">
+                    <span className="hidden sm:inline">Introducing our </span>SDK for seamless AI cost tracking integration
+                </p>
+                <a 
+                    href="/docs" 
+                    className="inline-flex items-center gap-1 text-white font-semibold hover:underline whitespace-nowrap"
+                >
+                    Learn more →
+                </a>
+            </div>
+        </div>
+    );
+};
+
 const HeroScreenMockup01 = () => {
     return (
         <div className="relative overflow-hidden bg-secondary_alt">
+            {/* Announcement Banner */}
+            <AnnouncementBanner />
+            
             {/* Background pattern */}
             <img
                 aria-hidden="true"
@@ -157,7 +181,7 @@ const HeroScreenMockup01 = () => {
                         </motion.div>
                         
                         <motion.h1 
-                            className="w-full whitespace-nowrap text-[40px] font-extrabold tracking-tight text-primary md:text-[56px] lg:text-[72px]"
+                            className="w-full text-[28px] sm:text-[36px] font-extrabold tracking-tight text-primary md:text-[56px] lg:text-[72px]"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
@@ -170,7 +194,7 @@ const HeroScreenMockup01 = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
                         >
-                            <span className="text-[40px] font-extrabold tracking-tight bg-gradient-to-r from-purple-500 via-purple-600 to-purple-800 bg-clip-text text-transparent md:text-[56px] lg:text-[72px]">
+                            <span className="text-[28px] sm:text-[36px] font-extrabold tracking-tight bg-gradient-to-r from-purple-500 via-purple-600 to-purple-800 bg-clip-text text-transparent md:text-[56px] lg:text-[72px]">
                                 We fix that.
                             </span>
                             <motion.svg
@@ -208,24 +232,21 @@ const HeroScreenMockup01 = () => {
                             TokenTra gives you complete visibility and control over AI spending across OpenAI, Anthropic, Google, Azure, and AWS Bedrock. Stop guessing. Start optimizing.
                         </motion.p>
                         <motion.div 
-                            className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12"
+                            className="mt-8 flex w-full justify-center md:mt-12"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
                         >
                             <MagneticButton strength={0.2}>
-                                <Button iconLeading={PlayCircle} color="secondary" size="xl">
-                                    Watch Demo
-                                </Button>
-                            </MagneticButton>
-                            <MagneticButton strength={0.2}>
-                                <motion.div
+                                <motion.a
+                                    href="https://app.tokentra.io"
+                                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                                 >
-                                    <Button size="xl">Get Started Free</Button>
-                                </motion.div>
+                                    Get Started Free
+                                </motion.a>
                             </MagneticButton>
                         </motion.div>
                         
@@ -283,52 +304,40 @@ const HeroScreenMockup01 = () => {
     );
 };
 
-const companyLogos = [
-    { name: "Linear", Icon: LinearDarkIcon },
-    { name: "Notion", Icon: NotionIcon },
-    { name: "Vercel", Icon: VercelDarkIcon },
-    { name: "Supabase", Icon: SupabaseIcon },
-    { name: "Raycast", Icon: RaycastIcon },
-    { name: "Resend", Icon: ResendDarkIcon },
-    { name: "Clerk", Icon: ClerkDarkIcon },
-    { name: "PostHog", Icon: PosthogDarkIcon },
-    { name: "Plain", Icon: PlainDarkIcon },
-    { name: "Trigger.dev", Icon: TriggerDotDevDarkIcon },
+const aiStartups = [
+    "Lovable",
+    "Replit",
+    "Cursor",
+    "Jasper",
+    "Copy.ai",
+    "Runway",
+    "Hugging Face",
+    "Cohere",
+    "Perplexity",
+    "Character.AI",
 ];
 
 const SocialProofFullWidthMasked = () => {
     return (
-        <section className="overflow-hidden bg-primary_alt py-16 md:py-24">
+        <section className="overflow-hidden bg-primary_alt py-12 md:py-16">
             <div className="mx-auto max-w-container px-4 md:px-8">
-                <div className="flex flex-col gap-8">
-                    <p className="text-center text-md font-medium text-tertiary">Trusted by innovative AI teams</p>
+                <div className="flex flex-col gap-6">
+                    <p className="text-center text-md font-medium text-tertiary">Trusted by innovative AI teams at</p>
                     <div className="flex max-w-full flex-col items-center gap-y-4 mask-x-from-80%">
-                        {/* Top layer of logos (visible on all viewports) */}
+                        {/* Top layer of company names */}
                         <div className="flex">
                             <div className="flex w-auto max-w-none shrink-0 animate-marquee justify-center gap-8 pl-8 motion-reduce:animate-none md:gap-12 md:pl-12">
-                                {companyLogos.map((logo) => (
-                                    <logo.Icon key={logo.name} className="h-8 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-200 md:h-10" />
+                                {aiStartups.map((name) => (
+                                    <span key={name} className="text-lg md:text-xl font-semibold text-tertiary whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-200">
+                                        {name}
+                                    </span>
                                 ))}
                             </div>
-
                             <div className="flex w-auto max-w-none shrink-0 animate-marquee justify-center gap-8 pl-8 motion-reduce:animate-none md:gap-12 md:pl-12">
-                                {companyLogos.map((logo) => (
-                                    <logo.Icon key={`${logo.name}-2`} className="h-8 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-200 md:h-10" />
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Bottom layer of logos (visible on mobile only) */}
-                        <div className="flex md:hidden">
-                            <div className="flex w-auto max-w-none shrink-0 animate-marquee justify-center gap-8 pl-8 delay-[-3s] direction-reverse motion-reduce:-translate-x-1/2 motion-reduce:animate-none md:gap-12 md:pl-12">
-                                {companyLogos.map((logo) => (
-                                    <logo.Icon key={`${logo.name}-3`} className="h-8 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-200 md:h-10" />
-                                ))}
-                            </div>
-
-                            <div className="flex w-auto max-w-none shrink-0 animate-marquee justify-center gap-8 pl-8 delay-[-3s] direction-reverse motion-reduce:-translate-x-1/2 motion-reduce:animate-none md:gap-12 md:pl-12">
-                                {companyLogos.map((logo) => (
-                                    <logo.Icon key={`${logo.name}-4`} className="h-8 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-200 md:h-10" />
+                                {aiStartups.map((name) => (
+                                    <span key={`${name}-2`} className="text-lg md:text-xl font-semibold text-tertiary whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-200">
+                                        {name}
+                                    </span>
                                 ))}
                             </div>
                         </div>
@@ -747,11 +756,14 @@ const CTACardHorizontal = () => {
                             <p className="mt-4 text-lg text-tertiary md:mt-5 lg:text-xl">Join 100+ startups already growing with TokenTra.</p>
                         </FadeInLeft>
                         <FadeInRight delay={0.2} className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:items-start">
-                            <Button color="secondary" size="xl">
+                            <Button color="secondary" size="xl" href="#features">
                                 Learn more
                             </Button>
-                            <a href="https://app.tokentra.io">
-                                <Button size="xl">Get started</Button>
+                            <a 
+                                href="https://app.tokentra.io"
+                                className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300"
+                            >
+                                Get started
                             </a>
                         </FadeInRight>
                     </div>
@@ -976,11 +988,14 @@ const CTAScreenMockup01 = () => {
                         ))}
                     </StaggerContainer>
                     <FadeInUp delay={0.4} className="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
-                        <Button color="secondary" size="xl">
+                        <Button color="secondary" size="xl" href="#features">
                             Learn more
                         </Button>
-                        <a href="https://app.tokentra.io">
-                            <Button size="xl">Get started</Button>
+                        <a 
+                            href="https://app.tokentra.io"
+                            className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300"
+                        >
+                            Get started
                         </a>
                     </FadeInUp>
                 </FadeInLeft>

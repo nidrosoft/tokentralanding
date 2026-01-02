@@ -283,14 +283,15 @@ export const PricingSection = () => {
                   transition={{ delay: 0.8 + index * 0.1 }}
                   className="mt-6"
                 >
-                  <a href={plan.ctaHref}>
-                    <Button
-                      size="lg"
-                      color={plan.isFeatured ? "primary" : "secondary"}
-                      className="w-full"
-                    >
-                      {plan.ctaText}
-                    </Button>
+                  <a 
+                    href={plan.ctaHref}
+                    className={`inline-flex items-center justify-center w-full px-4 py-3 text-md font-semibold rounded-lg transition-all duration-300 ${
+                      plan.isFeatured 
+                        ? 'text-white bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-md hover:shadow-lg' 
+                        : 'text-primary bg-secondary hover:bg-secondary_hover border border-secondary'
+                    }`}
+                  >
+                    {plan.ctaText}
                   </a>
                 </motion.div>
               </div>
