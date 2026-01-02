@@ -1,7 +1,6 @@
 [build]
-  command = "npm rebuild lightningcss --update-binary || true && npm run build"
+  command = "npm rebuild @tailwindcss/oxide --update-binary || true && npm rebuild lightningcss --update-binary || true && NEXT_PRIVATE_TURBOPACK=false npm run build"
   publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20.9.0"
-  NEXT_PRIVATE_TURBOPACK = "false"
