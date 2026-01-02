@@ -4,4 +4,4 @@
 
 [build.environment]
   NODE_VERSION = "20.9.0"
-  NEXT_PRIVATE_TURBOPACK = "0"
+  NEXT_PRIVATE_TURBOPACK = "false"
