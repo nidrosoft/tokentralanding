@@ -43,17 +43,17 @@ const problemCards = [
 
 export function ProblemStatementSection() {
   return (
-    <section className="bg-[#f8fafc] dark:bg-gray-900 py-20 lg:py-28">
+    <section className="bg-secondary py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-3 block">
+          <span className="text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3 block">
             The Problem
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4">
             The AI Cost Crisis Is Real
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-tertiary max-w-3xl mx-auto">
             Your AI spend is growing 3x faster than your revenue. Here&apos;s why every AI-powered company is struggling:
           </p>
         </div>
@@ -63,29 +63,29 @@ export function ProblemStatementSection() {
           {problemCards.map((card) => (
             <div
               key={card.title}
-              className="relative bg-gradient-to-b from-white to-slate-50 dark:from-gray-800 dark:to-gray-900 p-6 md:p-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-gray-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="relative bg-primary p-6 md:p-8 rounded-2xl overflow-hidden border border-secondary hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <Grid size={20} />
               
               {/* Icon */}
               <div className="relative z-20 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center">
-                  <card.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <div className="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 flex items-center justify-center">
+                  <card.icon className="w-6 h-6 text-brand-600" />
                 </div>
               </div>
               
               {/* Stat */}
-              <p className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white relative z-20 mb-2">
+              <p className="text-3xl md:text-4xl font-bold text-primary relative z-20 mb-2">
                 {card.stat}
               </p>
               
               {/* Title */}
-              <p className="text-lg font-semibold text-slate-800 dark:text-slate-100 relative z-20 mb-2">
+              <p className="text-lg font-semibold text-primary relative z-20 mb-2">
                 {card.title}
               </p>
               
               {/* Description */}
-              <p className="text-slate-600 dark:text-slate-400 text-base relative z-20">
+              <p className="text-tertiary text-base relative z-20">
                 {card.description}
               </p>
             </div>
