@@ -31,12 +31,12 @@ export const FeaturesTabsMockup01 = () => {
                     <Hero3DImage delay={0.3} className="flex w-full items-center justify-center md:h-128 md:w-auto">
                         <img
                             alt="TokenTra unified dashboard showing all AI providers connected with real-time cost analytics"
-                            src="/hero-light.png"
+                            src="/heroo-dark.png"
                             className="h-full rounded object-contain shadow-2xl ring-4 ring-screen-mockup-border md:rounded-[10px] dark:hidden"
                         />
                         <img
                             alt="TokenTra unified dashboard showing all AI providers connected with real-time cost analytics"
-                            src="/hero-dark.png"
+                            src="/heroo-dark.png"
                             className="hidden h-full rounded object-contain shadow-2xl ring-4 ring-screen-mockup-border md:rounded-[10px] dark:block"
                         />
                     </Hero3DImage>

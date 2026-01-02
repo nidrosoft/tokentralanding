@@ -284,12 +284,12 @@ const HeroScreenMockup01 = () => {
                                 <div className="size-full rounded-[7.9px] bg-primary p-0.5 shadow-modern-mockup-inner-md md:rounded-[24.5px] md:p-1 md:shadow-modern-mockup-inner-lg">
                                     <div className="relative size-full overflow-hidden rounded-[6.77px] bg-utility-gray-50 ring-[0.56px] ring-utility-gray-200 md:rounded-[21px] md:ring-[1.75px]">
                                         <img
-                                            src="/hero-light.png"
+                                            src="/heroo-dark.png"
                                             className="size-full object-cover dark:hidden"
                                             alt="TokenTra dashboard showing AI cost analytics with spend trends and model breakdown"
                                         />
                                         <img
-                                            src="/hero-dark.png"
+                                            src="/heroo-dark.png"
                                             className="hidden size-full object-cover dark:block"
                                             alt="TokenTra dashboard showing AI cost analytics with spend trends and model breakdown"
                                         />
@@ -381,8 +381,8 @@ const FeaturesAlternatingLayout01 = () => {
             ],
             icon: PieChart01,
             imagePosition: "right" as const,
-            imageLight: "/hero-light.png",
-            imageDark: "/hero-dark.png",
+            imageLight: "/heroo-dark.png",
+            imageDark: "/heroo-dark.png",
         },
         {
             label: "COST ATTRIBUTION",
@@ -1007,12 +1007,12 @@ const CTAScreenMockup01 = () => {
                                 <div className="relative overflow-hidden rounded-[6.77px] bg-utility-gray-50 ring-[0.56px] ring-utility-gray-200 md:rounded-[20.21px] md:ring-[1.68px]">
                                     <img
                                         alt="TokenTra dashboard showing AI cost analytics"
-                                        src="/hero-light.png"
+                                        src="/heroo-dark.png"
                                         className="object-cover object-left-top dark:hidden"
                                     />
                                     <img
                                         alt="TokenTra dashboard showing AI cost analytics"
-                                        src="/hero-dark.png"
+                                        src="/heroo-dark.png"
                                         className="hidden object-cover object-left-top dark:block"
                                     />
                                 </div>
