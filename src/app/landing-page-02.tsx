@@ -118,7 +118,7 @@ const footerNavList = [
 
 const AnnouncementBanner = () => {
     return (
-        <div className="bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 py-2.5 px-4">
+        <div className="relative z-10 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 py-2.5 px-4">
             <div className="mx-auto max-w-container flex items-center justify-center gap-x-3 text-sm md:text-base">
                 <span className="inline-flex items-center rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-semibold text-white">
                     NEW
