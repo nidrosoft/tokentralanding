@@ -162,7 +162,7 @@ export const blurFadeIn: Variants = {
 // MOTION COMPONENTS
 // ============================================================================
 
-interface MotionWrapperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragStart' | 'onDragEnd'> {
+interface MotionWrapperProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onAnimationStart' | 'onAnimationEnd'> {
     children: ReactNode;
     variants?: Variants;
     delay?: number;
