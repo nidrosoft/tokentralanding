@@ -181,7 +181,8 @@ const HeroScreenMockup01 = () => {
                         </motion.div>
                         
                         <motion.h1 
-                            className="w-full text-[28px] sm:text-[36px] font-extrabold tracking-tight text-primary md:text-[56px] lg:text-[72px]"
+                            className="w-full text-[28px] sm:text-[56px] font-[800] tracking-tight text-primary md:text-[56px] lg:text-[80px]" 
+                            style={{ fontFamily: 'Satoshi, sans-serif' }}
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
@@ -194,7 +195,7 @@ const HeroScreenMockup01 = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
                         >
-                            <span className="text-[28px] sm:text-[36px] font-extrabold tracking-tight bg-gradient-to-r from-purple-500 via-purple-600 to-purple-800 bg-clip-text text-transparent md:text-[56px] lg:text-[72px]">
+                            <span className="text-[28px] sm:text-[56px] font-[800] tracking-tight bg-gradient-to-r from-purple-500 via-purple-600 to-purple-800 bg-clip-text text-transparent md:text-[56px] lg:text-[80px]" style={{ fontFamily: 'Satoshi, sans-serif' }}>
                                 We fix that.
                             </span>
                             <motion.svg
