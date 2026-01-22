@@ -53,7 +53,7 @@ import { Avatar } from "@/components/base/avatar/avatar";
 import { Badge } from "@/components/base/badges/badges";
 import { Button } from "@/components/base/buttons/button";
 import { FeaturedIcon } from "@/components/foundations/featured-icon/featured-icon";
-import { UntitledLogo } from "@/components/foundations/logo/untitledui-logo";
+import { TokentraLogo } from "@/components/foundations/logo/tokentra-logo";
 import { RatingBadge } from "@/components/foundations/rating-badge";
 import { AngelList, Dribbble, Facebook, Layers, LinkedIn, X } from "@/components/foundations/social-icons";
 import { Header } from "@/components/marketing/header-navigation/header";
@@ -1033,7 +1033,7 @@ const FooterLarge02 = () => {
                 <div className="mx-auto max-w-container px-4 md:px-8">
                     <div className="flex flex-col gap-12 md:gap-16 xl:flex-row">
                         <div className="flex flex-col items-start gap-6 md:w-80 md:gap-6">
-                            <UntitledLogo className="h-8 w-min shrink-0" />
+                            <TokentraLogo variant="dark" className="h-8 shrink-0" />
                             <p className="text-md text-tertiary">Track, optimize, and control your AI spend across all providers. One dashboard, complete visibility.</p>
                         </div>
                         <nav className="flex-1">

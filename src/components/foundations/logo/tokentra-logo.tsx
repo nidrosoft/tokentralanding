@@ -1,10 +1,11 @@
 "use client";
 
 import type { HTMLAttributes } from "react";
-import Image from "next/image";
 import { cx } from "@/utils/cx";
 
-export const TokentraLogo = (props: HTMLAttributes<HTMLDivElement>) => {
+export const TokentraLogo = ({ variant, ...props }: HTMLAttributes<HTMLDivElement> & { variant?: "light" | "dark" | "auto" }) => {
+    const mode = variant || "auto";
+    
     return (
         <div
             {...props}
@@ -13,23 +14,30 @@ export const TokentraLogo = (props: HTMLAttributes<HTMLDivElement>) => {
                 props.className
             )}
         >
-            {/* Light logo for light mode, Dark logo for dark mode */}
-            <Image
-                src="/images/tokentra-light.svg"
-                alt="Tokentra"
-                width={631}
-                height={141}
-                className="h-full w-auto dark:hidden"
-                priority
-            />
-            <Image
-                src="/images/tokentra-dark.svg"
-                alt="Tokentra"
-                width={631}
-                height={141}
-                className="hidden h-full w-auto dark:block"
-                priority
-            />
+            {mode === "auto" ? (
+                <>
+                    {/* Light logo for light mode (gradient text), Dark logo for dark mode (white text) */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src="/images/tokentra-light.svg"
+                        alt="Tokentra"
+                        className="h-full w-auto dark:hidden"
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src="/images/tokentra-dark.svg"
+                        alt="Tokentra"
+                        className="hidden h-full w-auto dark:block"
+                    />
+                </>
+            ) : (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                    src={mode === "dark" ? "/images/tokentra-dark.svg" : "/images/tokentra-light.svg"}
+                    alt="Tokentra"
+                    className="h-full w-auto"
+                />
+            )}
         </div>
     );
 };
