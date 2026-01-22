@@ -7,7 +7,17 @@ import { Button as AriaButton, Dialog as AriaDialog, DialogTrigger as AriaDialog
 import { Button } from "@/components/base/buttons/button";
 import { TokentraLogo, TokentraLogoMinimal } from "@/components/foundations/logo/tokentra-logo";
 import { DropdownMenuSimple } from "@/components/marketing/header-navigation/dropdown-header-navigation";
+import { useWaitlist } from "@/components/ui/waitlist-modal";
 import { cx } from "@/utils/cx";
+
+const WaitlistButton = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+    const { openWaitlist } = useWaitlist();
+    return (
+        <button onClick={openWaitlist} className={className}>
+            {children}
+        </button>
+    );
+};
 
 type HeaderNavItem = {
     label: string;
@@ -79,12 +89,9 @@ const MobileFooter = () => {
                 </ul>
             </div>
             <div className="flex flex-col gap-3">
-                <a href="https://app.tokentra.io" className="inline-flex items-center justify-center px-4 py-2.5 text-md font-semibold text-white rounded-lg bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-md transition-all duration-300">
-                    Sign up
-                </a>
-                <Button color="secondary" size="lg" href="https://app.tokentra.io">
-                    Log in
-                </Button>
+                <WaitlistButton className="inline-flex items-center justify-center px-4 py-2.5 text-md font-semibold text-white rounded-lg bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-md transition-all duration-300">
+                    Join the Waitlist
+                </WaitlistButton>
             </div>
         </div>
     );
@@ -178,12 +185,9 @@ export const Header = ({ items = headerNavItems, isFullWidth, isFloating, classN
                     </div>
 
                     <div className="hidden items-center gap-3 md:flex">
-                        <Button color="secondary" size={isFloating ? "md" : "lg"} href="https://app.tokentra.io">
-                            Log in
-                        </Button>
-                        <a href="https://app.tokentra.io" className="inline-flex items-center justify-center px-4 py-2.5 text-md font-semibold text-white rounded-lg bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-md transition-all duration-300">
-                            Sign up
-                        </a>
+                        <WaitlistButton className="inline-flex items-center justify-center px-4 py-2.5 text-md font-semibold text-white rounded-lg bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-md transition-all duration-300">
+                            Join the Waitlist
+                        </WaitlistButton>
                     </div>
 
                     {/* Mobile menu and menu trigger */}

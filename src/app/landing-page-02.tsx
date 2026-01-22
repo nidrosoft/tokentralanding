@@ -65,7 +65,17 @@ import { SDKShowcaseSection } from "@/components/ui/sdk-showcase-section";
 import { PricingSection } from "@/components/ui/pricing-section";
 import { TestimonialSocialCards03 } from "@/components/marketing/testimonials/testimonial-social-cards-03";
 import { MetricsSimpleCenteredTextBrand } from "@/components/marketing/metrics/metrics-simple-centered-text-brand";
+import { useWaitlist } from "@/components/ui/waitlist-modal";
 import { cx } from "@/utils/cx";
+
+const WaitlistButton = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+    const { openWaitlist } = useWaitlist();
+    return (
+        <button onClick={openWaitlist} className={className}>
+            {children}
+        </button>
+    );
+};
 
 const footerSocials = [
     { label: "X (formerly Twitter)", icon: X, href: "https://x.com/zehcyriac" },
@@ -239,15 +249,11 @@ const HeroScreenMockup01 = () => {
                             transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
                         >
                             <MagneticButton strength={0.2}>
-                                <motion.a
-                                    href="https://app.tokentra.io"
-                                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                                <WaitlistButton
+                                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                                 >
-                                    Get Started Free
-                                </motion.a>
+                                    Join the Waitlist
+                                </WaitlistButton>
                             </MagneticButton>
                         </motion.div>
                         
@@ -760,12 +766,11 @@ const CTACardHorizontal = () => {
                             <Button color="secondary" size="xl" href="#features">
                                 Learn more
                             </Button>
-                            <a 
-                                href="https://app.tokentra.io"
-                                className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300"
+                            <WaitlistButton
+                                className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                             >
-                                Get started
-                            </a>
+                                Join the Waitlist
+                            </WaitlistButton>
                         </FadeInRight>
                     </div>
                 </ScaleIn>
@@ -992,12 +997,11 @@ const CTAScreenMockup01 = () => {
                         <Button color="secondary" size="xl" href="#features">
                             Learn more
                         </Button>
-                        <a 
-                            href="https://app.tokentra.io"
-                            className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300"
+                        <WaitlistButton
+                            className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                         >
-                            Get started
-                        </a>
+                            Join the Waitlist
+                        </WaitlistButton>
                     </FadeInUp>
                 </FadeInLeft>
 
